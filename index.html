@@ -7,7 +7,7 @@
 <meta name="description" content="Соборова світлиця — простір живої парафії в укритті Патріаршого собору УГКЦ у Києві. Кава, домашня випічка, страви, кейтеринг і події.">
 <meta property="og:title" content="Соборова світлиця — простір живої парафії">
 <meta property="og:description" content="Кава, домашня випічка, кейтеринг і зустрічі в укритті Патріаршого собору.">
-<meta property="og:image" content="images/food.jpg">
+<meta property="og:image" content="images/hero.jpg">
 <meta name="theme-color" content="#2B211B">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -156,11 +156,27 @@ section.band { padding-block: 96px; }
 .menu-note { margin-top: 24px; font-family: var(--display); font-style: italic; font-size: 20px; color: var(--muted); }
 @media (max-width: 860px) { .menu-grid { grid-template-columns: 1fr; gap: 36px; } }
 
+.kitchen { font-family: var(--display); font-size: 26px; text-transform: uppercase; letter-spacing: .03em; margin-bottom: 18px; display: grid; gap: 4px; }
+.kitchen span { font-family: var(--body); font-size: 12px; letter-spacing: .28em; color: var(--gold); }
+
+/* Кавова стрічка */
+.coffee { padding-block: 0 96px; }
+.strip { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 12px; }
+.strip figure, .mosaic figure, .books-photos figure { margin: 0; position: relative; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); min-width: 0; }
+.strip img, .mosaic img, .books-photos img { width: 100%; height: 100%; object-fit: cover; }
+.strip figure { aspect-ratio: 3 / 4; }
+.strip figure.tall { aspect-ratio: auto; }
+figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 28px 14px 12px; font-size: 13px; letter-spacing: .08em; color: var(--cream); background: linear-gradient(transparent, rgba(20, 14, 10, .82)); }
+@media (max-width: 860px) { .strip { grid-template-columns: 1fr 1fr; } .strip figure.tall { grid-column: 1 / -1; aspect-ratio: 16 / 10; } }
+
 /* Простір */
 .space { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; }
 .space div { background: var(--bg); padding: 28px 26px; display: grid; gap: 8px; align-content: start; }
 .space h3 { font-size: 24px; }
 .space p { font-size: 15px; color: var(--muted); }
+.mosaic { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-auto-rows: 210px; gap: 12px; margin-top: 12px; }
+.mosaic .big { grid-row: span 2; }
+@media (max-width: 860px) { .mosaic { grid-template-columns: 1fr 1fr; grid-auto-rows: 170px; } .mosaic .big { grid-column: 1 / -1; grid-row: auto; } }
 .gallery { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 12px; margin-top: 12px; }
 .gallery img { width: 100%; height: 100%; object-fit: cover; border-radius: 14px; aspect-ratio: 4 / 3; }
 .gallery img:first-child { aspect-ratio: auto; }
@@ -198,6 +214,17 @@ ol.steps li::before { content: counter(s) "."; font-family: var(--display); font
 .tags span { border: 1px solid var(--line); border-radius: 999px; padding: 7px 16px; font-size: 14px; }
 @media (max-width: 860px) { .events { grid-template-columns: 1fr; gap: 32px; } }
 
+/* Книгарня */
+.books { display: grid; grid-template-columns: .9fr 1.1fr; gap: 56px; align-items: center; }
+.week { display: grid; gap: 0; margin: 0; max-width: 420px; }
+.week div { display: flex; justify-content: space-between; gap: 12px; padding-block: 9px; border-bottom: 1px solid var(--line); }
+.week dt { color: var(--muted); }
+.week dd { margin: 0; font-variant-numeric: tabular-nums; }
+.week dd.off { color: var(--muted); font-style: italic; font-family: var(--display); font-size: 18px; }
+.books-photos { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 260px 200px; gap: 12px; }
+.books-photos .big { grid-column: 1 / -1; }
+@media (max-width: 860px) { .books { grid-template-columns: 1fr; gap: 36px; } .books-photos { grid-template-rows: 220px 160px; } }
+
 /* Контакти */
 .visit { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .card { border: 1px solid var(--line); border-radius: 18px; padding: 30px 28px; display: grid; gap: 16px; align-content: start; }
@@ -231,6 +258,7 @@ footer .wrap { padding-block: 34px; display: flex; flex-wrap: wrap; justify-cont
         <li><a href="#menu">Меню</a></li>
         <li><a href="#space">Простір</a></li>
         <li><a href="#catering">Кейтеринг</a></li>
+        <li><a href="#bookstore">Книгарня</a></li>
         <li><a href="#contacts">Контакти</a></li>
       </ul>
     </nav>
@@ -251,12 +279,12 @@ footer .wrap { padding-block: 34px; display: flex; flex-wrap: wrap; justify-cont
           <a class="btn" href="https://www.instagram.com/soborova.svitlytsya/" target="_blank" rel="noopener">Instagram</a>
         </div>
       </div>
-      <div class="arch-photo"><img src="images/food.jpg" alt="Кава, запіканка, чизкейк із ягодами і свіжий хліб на столі" width="1206" height="591"></div>
+      <div class="arch-photo"><img src="images/hero.jpg" alt="Чашка кави на дерев'яному столі, позаду світиться силует собору" width="1600" height="1067"></div>
     </div>
   </section>
 
   <section class="quote" aria-label="Цитата">
-    <img class="bgimg" src="images/table.jpg" alt="" loading="lazy">
+    <img class="bgimg" src="images/tables-flowers.jpg" alt="" loading="lazy">
     <div class="wrap">
       <p class="eyebrow">Цитати</p>
       <blockquote>«Не важливо, що ми їмо, а важливо, що їмо разом. Це дуже важливий момент».</blockquote>
@@ -279,7 +307,7 @@ footer .wrap { padding-block: 34px; display: flex; flex-wrap: wrap; justify-cont
             <p>Патріарший собор давно служить людям не лише як храм. Під час Революції Гідності його знали як «Патріаршу криївку», а на початку повномасштабного вторгнення собор був наповнений людьми вдень і вночі.</p>
             <p class="lead-italic">Цей досвід став основою майбутньої Світлиці.</p>
           </div>
-          <figure><img src="images/interior.jpg" alt="Зала Світлиці з великим напівкруглим диваном" loading="lazy"></figure>
+          <figure><img src="images/cathedral-light.jpg" alt="Світловий силует Патріаршого собору на стіні Світлиці" loading="lazy"></figure>
         </article>
         <article class="step">
           <p class="n">Крок <strong>02</strong></p>
@@ -288,7 +316,7 @@ footer .wrap { padding-block: 34px; display: flex; flex-wrap: wrap; justify-cont
             <p>Спершу це була кімната з голими стінами та бетонною підлогою. Тут почали збиратися батьки, які чекали дітей із катехизації: пили чай і каву, розмовляли. Так народилася ідея зробити укриття максимально дружнім і комфортним.</p>
             <p class="lead-italic">Не лише перечекати небезпеку, а відчути себе вдома.</p>
           </div>
-          <figure><img src="images/hall.jpg" alt="Парафіяни збираються в залі укриття" loading="lazy"></figure>
+          <figure><img src="images/hall.jpg" alt="Зала укриття сьогодні: дивани, столики й світло" loading="lazy"></figure>
         </article>
         <article class="step">
           <p class="n">Крок <strong>03</strong></p>
@@ -330,27 +358,39 @@ footer .wrap { padding-block: 34px; display: flex; flex-wrap: wrap; justify-cont
           <h2 class="title">Смак, що збирає разом</h2>
           <p class="sub">Усе, щоб зігріти, пригостити й зібрати людей за одним столом.</p>
         </div>
+        <p class="kitchen">Ми запустили кухню! <span>Смачно · по-домашньому · з любов'ю</span></p>
         <div class="cats">
           <div class="cat">
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="16" cy="17" r="9"/><circle cx="16" cy="17" r="5.5"/><path d="M4 6v8m-2-8v4a2 2 0 0 0 4 0V6M28 6c-2 0-3 2-3 5s1 4 3 4v11"/></svg>
-            <h3>Домашні страви</h3><p>Запіканки, гаряче та сніданки, як удома.</p>
-          </div>
-          <div class="cat">
             <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 20c0-7 5-12 11-12s11 5 11 12v2H5z"/><path d="M11 12l2 6m6-7-1 7M23 13l-3 5"/><path d="M3 25h26"/></svg>
-            <h3>Запашна випічка</h3><p>Хліб, пиріжки й булочки, часто спечені парафіянами.</p>
+            <h3>Свіжа випічка</h3><p>Ароматна, тепла, щойно з печі. Для душі та гарного настрою!</p>
           </div>
           <div class="cat">
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 25h22l-3-11H8z"/><path d="M8 14c1-3 4-5 8-5s7 2 8 5"/><circle cx="13" cy="6" r="2"/><circle cx="19" cy="6" r="2"/></svg>
-            <h3>Десерти</h3><p>Чизкейки, тарталетки та солодке до кави.</p>
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 15h24a12 9 0 0 1-24 0z"/><path d="M11 4c-1 2 1 3 0 6m5-6c-1 2 1 3 0 6m5-6c-1 2 1 3 0 6M10 27h12"/></svg>
+            <h3>Борщ, що гріє серце</h3><p>Наваристий, з домашнім смаком, як у мами.</p>
+          </div>
+          <div class="cat">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 22a11 11 0 0 1 22 0z"/><path d="M3 25h26M16 8v3"/><circle cx="16" cy="7" r="1.5"/></svg>
+            <h3>Другі страви</h3><p>Різноманітні, ситні та поживні. На кожен день і для всієї родини.</p>
           </div>
           <div class="cat">
             <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M6 12h17v6a8 8 0 0 1-8 8h-1a8 8 0 0 1-8-8z"/><path d="M23 14h2a3 3 0 0 1 0 6h-2.5M11 3c-1 2 1 3 0 5m5-5c-1 2 1 3 0 5"/></svg>
-            <h3>Кава, чай та напої</h3><p>Гаряча кава, чай і напої для дорослих та дітей.</p>
+            <h3>Кава, десерти й напої</h3><p>Еспресо, капучино з латте-артом, еклери та солодке до кави.</p>
           </div>
         </div>
         <p class="menu-note">Актуальне меню дня шукайте у Світлиці та в нашому Instagram.</p>
       </div>
-      <div class="photo"><img src="images/serving.jpg" alt="Домашня випічка на тарілці" loading="lazy"></div>
+      <div class="photo"><img src="images/latte.jpg" alt="Капучино з латте-артом у формі серця" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section class="coffee" aria-label="Наша кава">
+    <div class="wrap">
+      <div class="strip">
+        <figure class="tall"><img src="images/team.jpg" alt="Команда баристок Світлиці біля кавомашини" loading="lazy"><figcaption>Наша команда</figcaption></figure>
+        <figure><img src="images/espresso.jpg" alt="Еспресо стікає в чашку" loading="lazy"><figcaption>Еспресо</figcaption></figure>
+        <figure><img src="images/eclairs.jpg" alt="Різнокольорові еклери у вітрині" loading="lazy"><figcaption>Еклери у вітрині</figcaption></figure>
+        <figure><img src="images/pour.jpg" alt="Фільтр-кава наливається в чашку" loading="lazy"><figcaption>Фільтр-кава</figcaption></figure>
+      </div>
     </div>
   </section>
 
@@ -369,10 +409,12 @@ footer .wrap { padding-block: 34px; display: flex; flex-wrap: wrap; justify-cont
         <div><h3>Проєктор та екран</h3><p>Для лекцій, презентацій і перегляду фільмів.</p></div>
         <div><h3>Укриття</h3><p>Безпечний простір під Патріаршим собором.</p></div>
       </div>
-      <div class="gallery">
-        <img src="images/interior.jpg" alt="Зала з напівкруглим диваном і столиками" loading="lazy">
-        <img src="images/hall.jpg" alt="Зустріч парафіян у залі" loading="lazy">
-        <img src="images/people.jpg" alt="Гості за столом із квітами" loading="lazy">
+      <div class="mosaic">
+        <figure class="big"><img src="images/neon.jpg" alt="Неонова вивіска «Соборова Світлиця» на темній стіні" loading="lazy"></figure>
+        <figure><img src="images/kids-corner.jpg" alt="Дитячий куточок з м'якими кубиками" loading="lazy"><figcaption>Дитячий куточок</figcaption></figure>
+        <figure><img src="images/library.jpg" alt="Полиці бібліотеки з книжками" loading="lazy"><figcaption>Бібліотека</figcaption></figure>
+        <figure><img src="images/shelter-cinema.jpg" alt="Зала з екраном і проєктором" loading="lazy"><figcaption>Зала з екраном</figcaption></figure>
+        <figure><img src="images/sofa.jpg" alt="Великий напівкруглий диван з подушками" loading="lazy"><figcaption>Затишні дивани</figcaption></figure>
       </div>
     </div>
   </section>
@@ -421,7 +463,7 @@ footer .wrap { padding-block: 34px; display: flex; flex-wrap: wrap; justify-cont
 
   <section id="events" class="band">
     <div class="wrap events">
-      <div class="photo"><img src="images/kids.jpg" alt="Дитяче заняття у Світлиці" loading="lazy" style="aspect-ratio:4/3;object-fit:cover;width:100%;object-position:center 30%"></div>
+      <div class="photo"><img src="images/hall-table.jpg" alt="Столи з квітами і свічками, готові до зустрічі" loading="lazy" style="aspect-ratio:4/3;object-fit:cover;width:100%"></div>
       <div>
         <div class="head" style="margin-bottom:0">
           <p class="eyebrow left">Події у будні</p>
@@ -430,6 +472,32 @@ footer .wrap { padding-block: 34px; display: flex; flex-wrap: wrap; justify-cont
         </div>
         <div class="tags"><span>Зустрічі</span><span>Майстер-класи</span><span>Тренінги</span><span>Родинні свята</span><span>Парафіяльні події</span></div>
         <div class="cta"><a class="btn" href="tel:+380752345564">Домовитися: +38 (075) 234 55 64</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="bookstore" class="band deep">
+    <div class="wrap books">
+      <div>
+        <div class="head" style="margin-bottom:28px">
+          <p class="eyebrow left">Поруч із Світлицею</p>
+          <h2 class="title">Церковна книгарня «Собор»</h2>
+          <p class="sub">Духовна література, ікони, свічки та подарунки. Після кави можна зазирнути по книжку чи ікону для близьких.</p>
+        </div>
+        <dl class="week">
+          <div><dt>Понеділок</dt><dd class="off">вихідний</dd></div>
+          <div><dt>Вівторок</dt><dd>10:00–18:00</dd></div>
+          <div><dt>Середа</dt><dd>10:00–18:00</dd></div>
+          <div><dt>Четвер</dt><dd>10:00–18:00</dd></div>
+          <div><dt>П'ятниця</dt><dd class="off">вихідний</dd></div>
+          <div><dt>Субота</dt><dd>10:00–18:00</dd></div>
+          <div><dt>Неділя</dt><dd>08:00–15:00</dd></div>
+        </dl>
+      </div>
+      <div class="books-photos">
+        <figure class="big"><img src="images/bookstore.jpg" alt="Відвідувачі серед полиць книгарні" loading="lazy"></figure>
+        <figure><img src="images/icons.jpg" alt="Ікона святого Миколая у вітрині" loading="lazy"></figure>
+        <figure><img src="images/bookstore-seller.jpg" alt="Усміхнена продавчиня книгарні" loading="lazy"></figure>
       </div>
     </div>
   </section>

@@ -8,23 +8,25 @@
 <meta property="og:title" content="Соборова світлиця — простір живої парафії">
 <meta property="og:description" content="Кава, домашня випічка, кейтеринг і зустрічі в укритті Патріаршого собору.">
 <meta property="og:image" content="images/hero.jpg">
-<meta name="theme-color" content="#2B211B">
+<meta name="theme-color" content="#2F261D">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600&family=Marck+Script&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600&display=swap">
 <style>
-/* Layout: еспресо-коричневий простір зі свічковим світлом; кремовий текст, тонкі лінії з ромбами, як у сторіз; секції стрічками */
+/* Layout: кольори брендбука — еспресо-коричневий фон, кремовий текст, сіро-бежеві акценти силуету собору; тонкі лінії з ромбами, як у сторіз */
 :root {
-  --bg: #2B211B;          /* темна кава */
-  --bg-2: #352A22;        /* трохи світліша стіна */
-  --bg-3: #1F1813;
-  --cream: #EFE4D3;       /* текст */
-  --muted: #BFAE98;
-  --gold: #C9A877;        /* лінії й акценти */
-  --line: rgba(201, 168, 119, .38);
+  --bg: #2F261D;          /* бренд: темний фон логотипа */
+  --bg-2: #382E25;        /* трохи світліша стіна */
+  --bg-3: #261E17;
+  --cream: #F0ECE1;       /* бренд: світлий фон / текст логотипа */
+  --muted: #BCB5AB;       /* бренд: сіро-бежевий силует собору */
+  --gold: #D5CEC2;        /* акцент: світлий сіро-бежевий з палітри бренду */
+  --taupe: #655E54;       /* бренд: силует на темному фоні */
+  --line: rgba(188, 181, 171, .34);
   --display: "Cormorant Garamond", "Times New Roman", Georgia, serif;
   --body: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --script: "Marck Script", "Cormorant Garamond", cursive;
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
@@ -69,9 +71,10 @@ header.top {
   border-bottom: 1px solid var(--line);
 }
 header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 10px; }
-.logo { text-decoration: none; display: grid; line-height: 1; }
-.logo b { font-family: var(--script); font-weight: 400; font-size: 27px; color: var(--cream); }
-.logo small { font-size: 9px; letter-spacing: .28em; text-transform: uppercase; color: var(--gold); margin-top: 4px; }
+.logo { display: block; line-height: 0; }
+.logo img { height: 58px; width: auto; }
+footer .logo img { height: 92px; }
+.hero-logo { width: min(240px, 60%); height: auto; margin-bottom: 26px; }
 nav ul { list-style: none; display: flex; gap: 26px; margin: 0; padding: 0; font-size: 14px; letter-spacing: .04em; }
 nav a { text-decoration: none; color: var(--muted); }
 nav a:hover { color: var(--cream); }
@@ -79,9 +82,8 @@ nav a:hover { color: var(--cream); }
 @media (max-width: 900px) { nav { display: none; } }
 
 /* Герой */
-.hero .wrap { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; padding-block: 64px 80px; }
+.hero .wrap { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; padding-block: 48px 80px; }
 .hero h1 { font-size: clamp(44px, 7vw, 86px); line-height: .98; text-transform: uppercase; letter-spacing: .01em; margin-top: 22px; }
-.hero h1 em { font-family: var(--script); text-transform: none; font-style: normal; font-weight: 400; color: var(--gold); display: block; font-size: .8em; margin-top: 8px; }
 .hero .lede { margin-top: 26px; max-width: 46ch; color: var(--muted); font-size: 18px; }
 .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
 .btn {
@@ -89,8 +91,8 @@ nav a:hover { color: var(--cream); }
   font-weight: 600; font-size: 15px; text-decoration: none; border: 1px solid var(--gold); color: var(--cream);
   transition: background .2s ease, color .2s ease;
 }
-.btn.solid { background: var(--gold); color: var(--bg-3); }
-.btn:hover { background: var(--cream); color: var(--bg-3); border-color: var(--cream); }
+.btn.solid { background: var(--cream); color: var(--bg); border-color: var(--cream); }
+.btn:hover { background: var(--muted); color: var(--bg); border-color: var(--muted); }
 
 .arch-photo {
   position: relative; border-radius: 999px 999px 18px 18px; overflow: hidden; aspect-ratio: 4 / 5;
@@ -240,7 +242,7 @@ footer .wrap { padding-block: 34px; display: flex; flex-wrap: wrap; justify-cont
 
 <header class="top">
   <div class="wrap">
-    <a class="logo" href="#top" aria-label="Соборова світлиця, на початок"><b>Соборова світлиця</b><small>Простір живої парафії</small></a>
+    <a class="logo" href="#top" aria-label="Соборова світлиця, на початок"><img src="images/logo.svg" alt="Соборова світлиця — простір живої парафії" width="364" height="369"></a>
     <nav aria-label="Головна навігація">
       <ul>
         <li><a href="#history">Історія</a></li>
@@ -258,8 +260,9 @@ footer .wrap { padding-block: 34px; display: flex; flex-wrap: wrap; justify-cont
   <section class="hero">
     <div class="wrap">
       <div>
+        <img class="hero-logo" src="images/logo.svg" alt="" width="364" height="369">
         <p class="eyebrow left">Укриття Патріаршого собору</p>
-        <h1>Світла кімната великої родини <em>Соборова світлиця</em></h1>
+        <h1>Світла кімната великої родини</h1>
         <p class="lede">Простір живої парафії, де п'ють каву й чай, приносять домашню випічку, зустрічаються родинами і просто відчувають себе вдома.</p>
         <div class="status" id="status" aria-live="polite"><i></i><span>Працюємо у вихідні: <b>сб 10:00–16:00</b>, <b>нд 08:30–17:00</b></span></div>
         <div class="cta">
@@ -501,7 +504,7 @@ footer .wrap { padding-block: 34px; display: flex; flex-wrap: wrap; justify-cont
 
 <footer>
   <div class="wrap">
-    <a class="logo" href="#top"><b>Соборова світлиця</b><small>Простір живої парафії</small></a>
+    <a class="logo" href="#top" aria-label="Соборова світлиця, на початок"><img src="images/logo.svg" alt="Соборова світлиця — простір живої парафії" width="364" height="369" loading="lazy"></a>
     <span>Будемо раді вас бачити!</span>
   </div>
 </footer>

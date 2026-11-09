@@ -162,8 +162,8 @@ section.band { padding-block: 96px; }
 /* Кавова стрічка */
 .coffee { padding-block: 0 96px; }
 .strip { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 12px; }
-.strip figure, .mosaic figure, .books-photos figure { margin: 0; position: relative; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); min-width: 0; }
-.strip img, .mosaic img, .books-photos img { width: 100%; height: 100%; object-fit: cover; }
+.strip figure, .mosaic figure { margin: 0; position: relative; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); min-width: 0; }
+.strip img, .mosaic img { width: 100%; height: 100%; object-fit: cover; }
 .strip figure { aspect-ratio: 3 / 4; }
 .strip figure.tall { aspect-ratio: auto; }
 figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 28px 14px 12px; font-size: 13px; letter-spacing: .08em; color: var(--cream); background: linear-gradient(transparent, rgba(20, 14, 10, .82)); }
@@ -214,17 +214,6 @@ ol.steps li::before { content: counter(s) "."; font-family: var(--display); font
 .tags span { border: 1px solid var(--line); border-radius: 999px; padding: 7px 16px; font-size: 14px; }
 @media (max-width: 860px) { .events { grid-template-columns: 1fr; gap: 32px; } }
 
-/* Книгарня */
-.books { display: grid; grid-template-columns: .9fr 1.1fr; gap: 56px; align-items: center; }
-.week { display: grid; gap: 0; margin: 0; max-width: 420px; }
-.week div { display: flex; justify-content: space-between; gap: 12px; padding-block: 9px; border-bottom: 1px solid var(--line); }
-.week dt { color: var(--muted); }
-.week dd { margin: 0; font-variant-numeric: tabular-nums; }
-.week dd.off { color: var(--muted); font-style: italic; font-family: var(--display); font-size: 18px; }
-.books-photos { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 260px 200px; gap: 12px; }
-.books-photos .big { grid-column: 1 / -1; }
-@media (max-width: 860px) { .books { grid-template-columns: 1fr; gap: 36px; } .books-photos { grid-template-rows: 220px 160px; } }
-
 /* Контакти */
 .visit { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .card { border: 1px solid var(--line); border-radius: 18px; padding: 30px 28px; display: grid; gap: 16px; align-content: start; }
@@ -258,7 +247,6 @@ footer .wrap { padding-block: 34px; display: flex; flex-wrap: wrap; justify-cont
         <li><a href="#menu">Меню</a></li>
         <li><a href="#space">Простір</a></li>
         <li><a href="#catering">Кейтеринг</a></li>
-        <li><a href="#bookstore">Книгарня</a></li>
         <li><a href="#contacts">Контакти</a></li>
       </ul>
     </nav>
@@ -472,32 +460,6 @@ footer .wrap { padding-block: 34px; display: flex; flex-wrap: wrap; justify-cont
         </div>
         <div class="tags"><span>Зустрічі</span><span>Майстер-класи</span><span>Тренінги</span><span>Родинні свята</span><span>Парафіяльні події</span></div>
         <div class="cta"><a class="btn" href="tel:+380752345564">Домовитися: +38 (075) 234 55 64</a></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="bookstore" class="band deep">
-    <div class="wrap books">
-      <div>
-        <div class="head" style="margin-bottom:28px">
-          <p class="eyebrow left">Поруч із Світлицею</p>
-          <h2 class="title">Церковна книгарня «Собор»</h2>
-          <p class="sub">Духовна література, ікони, свічки та подарунки. Після кави можна зазирнути по книжку чи ікону для близьких.</p>
-        </div>
-        <dl class="week">
-          <div><dt>Понеділок</dt><dd class="off">вихідний</dd></div>
-          <div><dt>Вівторок</dt><dd>10:00–18:00</dd></div>
-          <div><dt>Середа</dt><dd>10:00–18:00</dd></div>
-          <div><dt>Четвер</dt><dd>10:00–18:00</dd></div>
-          <div><dt>П'ятниця</dt><dd class="off">вихідний</dd></div>
-          <div><dt>Субота</dt><dd>10:00–18:00</dd></div>
-          <div><dt>Неділя</dt><dd>08:00–15:00</dd></div>
-        </dl>
-      </div>
-      <div class="books-photos">
-        <figure class="big"><img src="images/bookstore.jpg" alt="Відвідувачі серед полиць книгарні" loading="lazy"></figure>
-        <figure><img src="images/icons.jpg" alt="Ікона святого Миколая у вітрині" loading="lazy"></figure>
-        <figure><img src="images/bookstore-seller.jpg" alt="Усміхнена продавчиня книгарні" loading="lazy"></figure>
       </div>
     </div>
   </section>
